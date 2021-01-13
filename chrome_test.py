@@ -71,10 +71,30 @@ browser.refresh()
 # content=cleaner.clean_html(content) 
 # doc=lh.fromstring(content)
 
-rdr_content = browser.find_elements_by_class_name('b')
+# element = driver.find_element(By.TAG_NAME, 'div')
+
+# Get all the elements available with tag name 'p'
+# elements = element.find_elements(By.TAG_NAME, 'p')
+# for e in elements:
+#     print(e.text)
+
+# e_divs = browser.find_elements_by_tag_name('div')
 
 
-for b in rdr_content:
-    print(b.get_attribute("class"))
-    if b.text != "" :
-        print(b.text)
+# for e_div in e_divs:
+#     e_bs = e_div.find_elements_by_tag_name('p')
+#     for e_b in e_bs:
+#         if e_b.text != "" :
+#             print(e_b.text)
+browser.find_elements_by_tag_name
+rdr_content = browser.find_element_by_class_name('rdr-content')
+rdr_cols = browser.find_elements_by_class_name('rdr-col')
+
+
+for rdr_col in rdr_cols:
+    rdr_col_content = rdr_col.find_element_by_class_name('rdr-col-content')
+    hsection1 = rdr_col.find_element_by_class_name('hsection1')
+    ps = hsection1.find_elements_by_tag_name('p')
+    for p in ps:
+        if p.text != "" :
+            print(p.text)   
