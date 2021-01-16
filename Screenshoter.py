@@ -10,13 +10,13 @@ class Screenshoter:
     while (len(s) != 4):
         s = "0" + s
     return s
-
+#30 650 1880
   def do_shots(self, first: int):
-    im = pyscreenshot.grab(bbox=(50,80,650,1000))
+    im = pyscreenshot.grab(bbox=(30,10,650,1070))
     im.save("pages\\"+ self.numToStr(first) + ".png")
-    im = pyscreenshot.grab(bbox=(650,80,1270,1000))
+    im = pyscreenshot.grab(bbox=(650,10,1270,1070))
     im.save("pages\\"+ self.numToStr(first+1) + ".png") 
-    im = pyscreenshot.grab(bbox=(1270,80,1880,1000))
+    im = pyscreenshot.grab(bbox=(1270,10,1890,1070))
     im.save("pages\\"+ self.numToStr(first+2) + ".png")
 
   def Start(self):
